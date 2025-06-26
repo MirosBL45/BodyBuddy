@@ -1,5 +1,9 @@
+import { SignOutButton } from "@clerk/nextjs";
+
 export default function HomePage() {
   return (
-    <div>HomePage</div>
+    <div>HomePage
+      <SignOutButton />
+    </div>
   )
 }
