@@ -50,11 +50,11 @@
   /* Cyberpunk Theme Colors */
   --cyber-black: #000000;
   --cyber-dark: #0a0c14;
-  --cyber-green-bright: #18cef2;
-  --cyber-green: #1089bd;
-  --cyber-green-dark: #0b4a7d;
-  --cyber-green-glow: #38bdf8;
-  --cyber-accent: #0ff4;
+  --cyber-green-bright: #21d375;
+  --cyber-green: #19985b;
+  --cyber-green-dark: #0d5c39;
+  --cyber-green-glow: #51e29a;
+  --cyber-accent: #7cffb0;
 
   /* Background */
   --background: var(--cyber-dark);
