@@ -128,6 +128,7 @@ export default function Navbar() {
           style={{ backgroundColor: '#0d5c39' }}
           className="flex flex-col items-center gap-6 py-8"
         >
+          <div className="flex flex-col items-center gap-6 py-8 h-screen">
           {isSignedIn ? (
             <>
               <Link
@@ -189,6 +190,7 @@ export default function Navbar() {
               </SignUpButton>
             </>
           )}
+          </div>
         </nav>
       </aside>
     </header>
