@@ -1,3 +1,5 @@
+import { homeStats } from '@/constants/homeStats';
+
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen text-foreground overflow-hidden">
@@ -19,6 +21,33 @@ export default function HomePage() {
                 <span className="text-foreground">AI</span>
                 <span className="text-primary"> Technology</span>
               </h1>
+
+              {/* SEPERATOR LINE, self closing tag  */}
+              <div className="h-px w-full bg-gradient-to-r from-primary via-secondary to-primary opacity-50" />
+
+              <p className="text-xl text-muted-foreground w-2/3">
+                Talk to our AI coach to receive custom-made diet plans and
+                workout routines tailored to your needs
+              </p>
+
+              {/* STATS */}
+              <div className="flex items-center gap-10 py-6 font-mono">
+                {homeStats.map((item, index) => (
+                  <div className="flex items-center gap-10" key={index}>
+                    <div className="flex flex-col">
+                      <div className="text-2xl text-primary">{item.value}</div>
+                      <div className="text-xs uppercase tracking-wider">
+                        {item.label}
+                      </div>
+                    </div>
+
+                    {/* Prikaži separator osim posle poslednjeg elementa */}
+                    {index < homeStats.length - 1 && (
+                      <div className="h-12 w-px bg-gradient-to-b from-transparent via-border to-transparent"></div>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
