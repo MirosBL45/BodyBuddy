@@ -6,6 +6,7 @@ import {
   HomeButton,
   CornerPieces,
   Decorations,
+  UserPrograms,
 } from '@/components/homeComponents';
 
 export default function HomePage() {
@@ -83,6 +84,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <UserPrograms />
     </div>
   );
 }
