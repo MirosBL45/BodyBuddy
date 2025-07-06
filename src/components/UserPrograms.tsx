@@ -44,8 +44,8 @@ export default function UserPrograms() {
             </h2>
 
             <p className="text-lg text-muted-foreground max-w-xl mx-auto mb-10">
-              Explore personalized fitness plans our AI assistant has created
-              for other users
+              Explore how our AI creates unique workout plans for people like
+              you
             </p>
 
             {/* STATS */}
@@ -58,7 +58,6 @@ export default function UserPrograms() {
                       {item.label}
                     </p>
                   </div>
-                  {/* Dodaj separator osim posle poslednjeg */}
                   {index < userStats.length - 1 && (
                     <div className="w-px h-12 bg-border"></div>
                   )}

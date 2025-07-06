@@ -97,7 +97,7 @@ export const userPrograms = [
                 { day: "Saturday", focus: "Cardio & Core", duration: "40 min" },
             ],
             description:
-                "This program focuses on functional movement patterns that improve everyday performance while being gentle on the knees. Emphasis is on core strength, mobility, and cardiovascular health.",
+                "Strengthen your core, improve mobility, and support heart health — all through knee-friendly movements designed to help you thrive in everyday life.",
         },
         diet_plan: {
             title: "Balanced Vegetarian Nutrition",
@@ -110,7 +110,7 @@ export const userPrograms = [
                 { meal: "Snacks", example: "Mixed nuts, hummus with vegetables, protein smoothie" },
             ],
             description:
-                "This vegetarian meal plan ensures adequate protein intake from plant sources. It focuses on whole foods and supports your active lifestyle while accommodating knee issues with anti-inflammatory food choices.",
+                "Fuel your body with clean, plant-based protein and reduce joint inflammation with this vegetarian meal plan tailored for active individuals with knee sensitivity.",
         },
     },
 ];
