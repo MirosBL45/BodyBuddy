@@ -30,7 +30,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <DesktopNav isSignedIn={isSignedIn} />
+        <DesktopNav isSignedIn={isSignedIn ?? false} />
 
         {/* Menu Button */}
         <div className="md:hidden flex items-center">
@@ -48,7 +48,7 @@ export default function Navbar() {
       <MobileSidebar
         isSidebarOpen={isSidebarOpen}
         closeSidebar={closeSidebar}
-        isSignedIn={isSignedIn}
+        isSignedIn={isSignedIn ?? false}
       />
     </header>
   );

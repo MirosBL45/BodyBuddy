@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { SignInButton, SignUpButton, UserButton } from '@clerk/nextjs';
-import { XIcon } from 'lucide-react';
+import { XIcon, HomeIcon, BookOpenText } from 'lucide-react';
 import { Button } from './ui/button';
 import { NAV_LINKS } from '@/constants/navigation';
 
@@ -88,6 +88,22 @@ export default function MobileSidebar({
                     Sign Up
                   </Button>
                 </SignUpButton>
+                <Link
+                  href={'/'}
+                  className="flex flex-col items-center gap-1.5 text-lg hover:text-primary transition-colors w-full py-2"
+                  onClick={closeSidebar}
+                >
+                  <HomeIcon size={24} />
+                  <span>Home</span>
+                </Link>
+                <Link
+                  href={'/blog'}
+                  className="flex flex-col items-center gap-1.5 text-lg hover:text-primary transition-colors w-full py-2"
+                  onClick={closeSidebar}
+                >
+                  <BookOpenText size={24} />
+                  <span>Blog</span>
+                </Link>
               </>
             )}
           </div>

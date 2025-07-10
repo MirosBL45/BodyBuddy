@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { SignInButton, SignUpButton, UserButton } from '@clerk/nextjs';
 import { Button } from './ui/button';
 import { NAV_LINKS } from '@/constants/navigation';
+import { HomeIcon, BookOpenText } from 'lucide-react';
 
 interface DesktopNavProps {
   isSignedIn: boolean;
@@ -47,6 +48,20 @@ export default function DesktopNav({ isSignedIn }: DesktopNavProps) {
               Sign Up
             </Button>
           </SignUpButton>
+          <Link
+            href={'/'}
+            className="flex items-center gap-1.5 text-sm hover:text-primary transition-colors"
+          >
+            <HomeIcon size={16} />
+            <span>Home</span>
+          </Link>
+          <Link
+            href={'/blog'}
+            className="flex items-center gap-1.5 text-sm hover:text-primary transition-colors"
+          >
+            <BookOpenText size={16} />
+            <span>Blog</span>
+          </Link>
         </>
       )}
     </nav>
