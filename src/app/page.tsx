@@ -50,7 +50,7 @@ export default function HomePage() {
                       </div>
                     </div>
                     {index < homeStats.length - 1 && (
-                      <div className="h-12 w-px bg-gradient-to-b from-transparent via-border to-transparent"></div>
+                      <div className="hidden sm:block h-12 w-px bg-gradient-to-b from-transparent via-border to-transparent"></div>
                     )}
                   </div>
                 ))}

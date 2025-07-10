@@ -49,9 +49,9 @@ export default function UserPrograms() {
             </p>
 
             {/* STATS */}
-            <div className="flex items-center justify-center gap-16 mt-10 font-mono">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16 mt-10 font-mono text-center">
               {userStats.map((item, index) => (
-                <div key={index} className="flex items-center gap-16">
+                <div key={index} className="flex items-center gap-8 sm:gap-16">
                   <div className="flex flex-col items-center">
                     <p className="text-3xl text-primary">{item.value}</p>
                     <p className="text-sm text-muted-foreground uppercase tracking-wide mt-1">
@@ -59,7 +59,7 @@ export default function UserPrograms() {
                     </p>
                   </div>
                   {index < userStats.length - 1 && (
-                    <div className="w-px h-12 bg-border"></div>
+                    <div className="hidden sm:block w-px h-12 bg-border"></div>
                   )}
                 </div>
               ))}
