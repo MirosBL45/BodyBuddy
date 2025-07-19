@@ -17,44 +17,64 @@ export default function GenerateProgramPage() {
 
   const messageContainerRef = useRef<HTMLDivElement>(null);
 
+  // auto-scroll messages
+  useEffect(() => {
+    if (messageContainerRef.current) {
+      messageContainerRef.current.scrollTop =
+        messageContainerRef.current.scrollHeight;
+    }
+  }, [messages]);
+
+  // navigate user to profile page after the call ends
+  useEffect(() => {
+    if (callEnded) {
+      const redirectTimer = setTimeout(() => {
+        router.push('/profile');
+      }, 1500);
+
+      return () => clearTimeout(redirectTimer);
+    }
+  }, [callEnded, router]);
+
   // setup event listeners for vapi
   useEffect(() => {
-    const handleCallStart = () => {
+    function handleCallStart() {
       console.log('Call started');
       setConnecting(false);
       setCallActive(true);
       setCallEnded(false);
-    };
+    }
 
-    const handleCallEnd = () => {
+    function handleCallEnd() {
       console.log('Call ended');
       setCallActive(false);
       setConnecting(false);
       setIsSpeaking(false);
       setCallEnded(true);
-    };
+    }
 
-    const handleSpeechStart = () => {
+    function handleSpeechStart() {
       console.log('AI started Speaking');
       setIsSpeaking(true);
-    };
+    }
 
-    const handleSpeechEnd = () => {
+    function handleSpeechEnd() {
       console.log('AI stopped Speaking');
       setIsSpeaking(false);
-    };
-    const handleMessage = (message: any) => {
+    }
+
+    function handleMessage(message: any) {
       if (message.type === 'transcript' && message.transcriptType === 'final') {
         const newMessage = { content: message.transcript, role: message.role };
         setMessages((prev) => [...prev, newMessage]);
       }
-    };
+    }
 
-    const handleError = (error: any) => {
+    function handleError(error: any) {
       console.log('Vapi Error', error);
       setConnecting(false);
       setCallActive(false);
-    };
+    }
 
     vapi
       .on('call-start', handleCallStart)
