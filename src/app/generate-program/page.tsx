@@ -5,9 +5,11 @@ import { useUser } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
 import { vapi } from '@/lib/vapi';
 import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import AIMan from '@/assets/SmallBodyBuddy.webp';
 import UserAvatar from '@/assets/user-avatar.png';
+import { TabTitle } from '@/constants/GeneralFunctions';
 
 export default function GenerateProgramPage() {
   const [callActive, setCallActive] = useState(false);
@@ -20,6 +22,11 @@ export default function GenerateProgramPage() {
   const router = useRouter();
 
   const messageContainerRef = useRef<HTMLDivElement>(null);
+
+  // for tab title
+  useEffect(() => {
+    TabTitle('BodyBuddy AI | Generate Program');
+  }, []);
 
   // auto-scroll messages
   useEffect(() => {
@@ -251,6 +258,36 @@ export default function GenerateProgramPage() {
               </div>
             </div>
           </Card>
+        </div>
+        {/* MESSAGE COINTER  */}
+
+        {/* CALL CONTROLS */}
+        <div className="w-full flex justify-center gap-4">
+          <Button
+            className={`w-40 text-xl rounded-3xl ${
+              callActive
+                ? 'bg-destructive hover:bg-destructive/90'
+                : callEnded
+                  ? 'bg-green-600 hover:bg-green-700'
+                  : 'bg-primary hover:bg-primary/90'
+            } text-white relative`}
+            onClick={toggleCall}
+            disabled={connecting || callEnded}
+          >
+            {connecting && (
+              <span className="absolute inset-0 rounded-full animate-ping bg-primary/50 opacity-75"></span>
+            )}
+
+            <span>
+              {callActive
+                ? 'End Call'
+                : connecting
+                  ? 'Connecting...'
+                  : callEnded
+                    ? 'View Profile'
+                    : 'Start Call'}
+            </span>
+          </Button>
         </div>
       </div>
     </div>
