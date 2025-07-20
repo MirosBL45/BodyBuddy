@@ -7,6 +7,7 @@ import { vapi } from '@/lib/vapi';
 import { Card } from '@/components/ui/card';
 import Image from 'next/image';
 import AIMan from '@/assets/SmallBodyBuddy.webp';
+import UserAvatar from '@/assets/user-avatar.png';
 
 export default function GenerateProgramPage() {
   const [callActive, setCallActive] = useState(false);
@@ -216,6 +217,37 @@ export default function GenerateProgramPage() {
                         ? 'Redirecting to profile...'
                         : 'Waiting...'}
                 </span>
+              </div>
+            </div>
+          </Card>
+
+          {/* USER CARD */}
+          <Card
+            className={`bg-card/90 backdrop-blur-sm border overflow-hidden relative`}
+          >
+            <div className="aspect-video flex flex-col items-center justify-center p-6 relative">
+              {/* User Image */}
+              <div className="relative size-32 mb-4">
+                <img
+                  src={user?.imageUrl || UserAvatar.src}
+                  alt="User"
+                  className="size-full object-cover rounded-full"
+                />
+              </div>
+
+              <h2 className="text-xl font-bold text-foreground">You</h2>
+              <p className="text-sm text-muted-foreground mt-1">
+                {user
+                  ? (user.firstName + ' ' + (user.lastName || '')).trim()
+                  : 'Guest'}
+              </p>
+
+              {/* User Ready Text */}
+              <div
+                className={`mt-4 flex items-center gap-2 px-3 py-1 rounded-full bg-card border`}
+              >
+                <div className={`w-2 h-2 rounded-full bg-muted`} />
+                <span className="text-xs text-muted-foreground">Ready</span>
               </div>
             </div>
           </Card>
