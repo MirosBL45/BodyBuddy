@@ -1,5 +1,5 @@
 export default function HelpPage() {
   return (
-    <div>HelpPage</div>
+    <div>This is HelpPage</div>
   )
 }

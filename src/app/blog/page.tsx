@@ -1,5 +1,5 @@
 export default function BlogPage() {
   return (
-    <div>BlogPage</div>
+    <div>This is BlogPage</div>
   )
 }

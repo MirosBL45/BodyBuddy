@@ -1,5 +1,5 @@
 export default function HelpCompaniesPage() {
   return (
-    <div>HelpCompaniesPage</div>
+    <div>This is HelpCompaniesPage</div>
   )
 }

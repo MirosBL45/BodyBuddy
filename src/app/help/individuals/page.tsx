@@ -1,5 +1,5 @@
 export default function HelpIndividualsPage() {
   return (
-    <div>HelpIndividualsPage</div>
+    <div>This is HelpIndividualsPage</div>
   )
 }
