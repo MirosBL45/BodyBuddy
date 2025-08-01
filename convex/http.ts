@@ -247,13 +247,20 @@ http.route({
       dietPlan = validateDietPlan(dietPlan);
       console.log(`Validated diet plan: ${dietPlan}`);
 
+      // date format
+      const dateString = new Date().toLocaleDateString("sr-RS", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "2-digit",
+      });
+
       // save to our DB: CONVEX
       const planId = await ctx.runMutation(api.plans.createPlan, {
         userId: user_id,
         dietPlan,
         isActive: true,
         workoutPlan,
-        name: `${fitness_goal} Plan - ${new Date().toLocaleDateString()}`,
+        name: `${fitness_goal}: ${dateString}`,
       });
 
       return new Response(
