@@ -131,6 +131,7 @@ http.route({
       const {
         user_id,
         age,
+        gender,
         height,
         weight,
         injuries,
@@ -153,6 +154,7 @@ http.route({
 
       const workoutPrompt = `You are an experienced fitness coach creating a personalized workout plan based on:
       Age: ${age}
+      Gender: ${gender}
       Height: ${height}
       Weight: ${weight}
       Injuries or limitations: ${injuries}
@@ -204,6 +206,7 @@ http.route({
 
       const dietPrompt = `You are an experienced nutrition coach creating a personalized diet plan based on:
         Age: ${age}
+        Gender: ${gender}
         Height: ${height}
         Weight: ${weight}
         Fitness goal: ${fitness_goal}
@@ -254,13 +257,17 @@ http.route({
         year: "2-digit",
       });
 
+      // all first letters caps
+      const toTitleCase = (str: string) =>
+        str.split(" ").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+
       // save to our DB: CONVEX
       const planId = await ctx.runMutation(api.plans.createPlan, {
         userId: user_id,
         dietPlan,
         isActive: true,
         workoutPlan,
-        name: `${fitness_goal}: ${dateString}`,
+        name: `${toTitleCase(fitness_goal)}: ${dateString}`,
       });
 
       return new Response(
