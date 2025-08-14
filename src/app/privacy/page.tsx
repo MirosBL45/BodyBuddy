@@ -10,9 +10,9 @@ export default function PrivacyPage() {
           </h1>
           <div className="space-y-3 text-base sm:text-lg leading-relaxed text-gray-700">
             {section.content.map((item, i) => {
-              if (item.type === "paragraph") {
+              if (item.type === 'paragraph') {
                 return <p key={i}>{item.text}</p>;
-              } else if (item.type === "list") {
+              } else if (item.type === 'list') {
                 return (
                   <ul key={i} className="list-disc list-inside space-y-1">
                     {item.items.map((li, liIdx) => (

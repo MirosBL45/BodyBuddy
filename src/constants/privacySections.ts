@@ -58,7 +58,7 @@ export const privacySections: Section[] = [
     {
         title: "Contact Us",
         content: [
-            { type: "paragraph", text: "If you have questions about this Privacy Policy, please reach out to our support team." }
+            { type: "paragraph", text: "If you have questions about this Privacy Policy, please contact us at our contact page." }
         ],
     },
 ];
