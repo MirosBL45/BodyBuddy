@@ -20,7 +20,14 @@ export default function Layout({
 }>) {
   return (
     <main className="max-w-4xl mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold text-center mb-8">Help</h1>
+      <h1 className="text-4xl font-bold text-center mb-8">
+        <Link
+          className="hover:text-primary transition-all duration-300"
+          href={'/help'}
+        >
+          Help
+        </Link>
+      </h1>
 
       <div className="flex flex-col sm:flex-row gap-6 justify-center">
         {helpLinks.map((link, index) => (
