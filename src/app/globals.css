@@ -235,3 +235,18 @@
 .animate-fadeIn {
   animation: fadeIn 0.5s ease-in-out forwards;
 }
+
+@layer utilities {
+  @keyframes bounce-slow {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+  .animate-bounce-slow {
+    animation: bounce-slow 1.8s infinite;
+  }
+}

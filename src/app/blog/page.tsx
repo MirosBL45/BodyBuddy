@@ -1,5 +1,7 @@
+import WorkInProgress from "@/components/WorkInProgress";
+
 export default function BlogPage() {
   return (
-    <div>This is BlogPage</div>
+    <WorkInProgress title="Blog coming soon" message="We're building this page — stay tuned!" />
   )
 }
